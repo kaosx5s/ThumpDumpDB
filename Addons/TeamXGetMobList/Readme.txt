@@ -1,0 +1,1 @@
+This addon dumps relevant mob information, pretty straight forward.

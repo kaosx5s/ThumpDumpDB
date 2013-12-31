@@ -1,0 +1,1 @@
+This addon was created to test an exploit with the market system where you could buy an item by simply doing an HTTP request. It worked.

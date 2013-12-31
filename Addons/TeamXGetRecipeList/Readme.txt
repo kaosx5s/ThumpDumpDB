@@ -1,0 +1,1 @@
+Addon used to dump the entire list of recipes in Firefall's data table.

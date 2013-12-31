@@ -1,0 +1,2 @@
+This was a development addon used to track and find new mobs and verify data. It was also semi-created for someone who wanted to create a 
+Firefall "pokedex" but we never recieved word back from the player after the addon was created.

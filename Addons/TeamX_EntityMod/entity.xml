@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Component xmlns="http://www.red5studios.com/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.red5studios.com/ ../../../../schemas/component.xsd">
+	<Info 
+		title="ThumpDumpDB.com"
+		author="TeamX"
+		description="Data collection addon for ThumpDumpDB.com"
+		url="ThumpDumpDB.com"
+		uiVersion="1000"
+	/>
+
+	<Events>
+		<Event name="ON_COMPONENT_LOAD"			bind="OnComponentLoad"/>
+		<Event name="ON_UI_ENTITY_AVAILABLE"	bind="OnEntityAvailable"/>
+		<Event name="ON_UI_ENTITY_LOST"	      	bind="OnEntityLost"/>
+		<Event name="ON_CHARACTER_STATUS_CHANGED"	bind="OnEntityStatusChanged"/>
+		<Event name="ON_CHARACTER_VITALS_CHANGED"	bind="OnEntityVitalsChanged"/>
+		<Event name="MY_HIDE_ENTITY_PLATE"		bind="OnHideEntity"/>
+	</Events>
+
+	<Textures>
+		<Texture name="Plate" src="components/MainUI/HUD/EntityPlates/EntityPlates.dds" premultiplied="true">
+			<Region name="lock" top="0" bottom="128" left="0" right="128" />
+			<Region name="lock_mh" top="0" bottom="128" left="128" right="0" />
+			<Region name="lock_mv" top="128" bottom="0" left="0" right="128" />
+			<Region name="lock_md" top="128" bottom="0" left="128" right="0" />
+			<Region name="bar" top="130" bottom="142" left="0" right="128" />
+		</Texture>
+	</Textures>
+
+	<Styles>
+		<StyleSheet name="health_fill" parent="#StillArt">
+			texture:Plate;
+			region:bar;
+			tint:#FF0000;
+			shadow:0.6;
+			hotpoint:1;
+		</StyleSheet>
+		<StyleSheet name="health_empty" parent="health_fill">
+			exposure:-.6;
+			alpha:0.6;
+			shadow:0.0;
+			texture:Plate;
+			region:bar;
+			tint:damage;
+			hotpoint:1;
+		</StyleSheet>
+		<StyleSheet name="icon" parent="#StillArt">
+		</StyleSheet>
+		<StyleSheet name="leader_icon" parent="icon">
+			texture:icons;
+			region:WarEffort;
+			tint:me;
+		</StyleSheet>
+		<StyleSheet name="name" parent="#Text">
+			font:UbuntuBold_9;
+			halign:center;
+			valign:center;
+			wrap:false;
+			clip:false;
+		</StyleSheet>
+		<StyleSheet name="title" parent="name">
+			font:UbuntuBold_9;
+		</StyleSheet>
+	</Styles>
+	
+	<BluePrints>
+		<BluePrint name="plate" instantiable="true" style="alpha:1">
+			<Group name="header" dimensions="center-x:50%; width:100%; height:20; top:0" style="alpha:1">
+				<Text name="name" dimensions="left:0; width:100%; height:100%; center-y:50%" class="name"/>
+				<Text name="title" dimensions="center-x:50%; bottom:0; width:100%; height:5" class="title" style="visible:true"/>
+			</Group>
+			<Group name="information" dimensions="center-x:50%; width:60; height:6; bottom:100%" style="alpha:1">
+				<Text name="current_hp" dimensions="right:150; width:100%; height:100%" class="name"/>
+				<Text name="max_hp" dimensions="right:150; top:10; width:100%; height:100%" class="name"/>
+				<Text name="mob_type" dimensions="right:150; top:20; width:100%; height:100%" class="name"/>
+				<Text name="faction" dimensions="right:150; top:30; width:100%; height:100%" class="name"/>
+				<Text name="weapon_id" dimensions="right:150; top:40; width:100%; height:100%" class="name"/>
+				<Text name="chassis_id" dimensions="right:150; top:50; width:100%; height:100%" class="name"/>
+				<Text name="coord_x" dimensions="right:150; top:70; width:100%; height:100%" class="name"/>
+				<Text name="coord_y" dimensions="right:150; top:80; width:100%; height:100%" class="name"/>
+				<Text name="coord_z" dimensions="right:150; top:90; width:100%; height:100%" class="name"/>
+			</Group>
+		</BluePrint>
+
+	</BluePrints>	
+
+	<Frames>
+		<HUDFrame name="Main" dimensions="right:99.5%; top:30; width:220; height:22" style="alpha:0">
+			<Children>
+				<Text id="NAME" dimensions="dock:fill" style="font:UbuntuBold_10; halign:left; valign:center; alpha:1.0" key="ThumpDumpDB"/>
+			</Children>
+		</HUDFrame>
+	</Frames>
+</Component>

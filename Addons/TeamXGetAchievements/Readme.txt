@@ -1,0 +1,1 @@
+Dumps the Achievement database table from Firefall.

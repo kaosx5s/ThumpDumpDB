@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Component xmlns="http://www.red5studios.com/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.red5studios.com/ ../../../../schemas/component.xsd">
+	<Info 
+		title="ThumpDumpDB.com"
+		author="TeamX"
+		description="Data collection addon for ThumpDumpDB.com"
+		url="ThumpDumpDB.com"
+		uiVersion="1000"
+	/>
+
+	<Events>
+		<Event name="ON_COMPONENT_LOAD"			bind="OnComponentLoad"/>
+		<Event name="ON_PLAYER_READY"			bind="OnPlayerReady"/>
+		<Event name="ON_BATTLEFRAME_CHANGED"	bind="OnBattleFrameChanged"/>
+		<Event name="ON_TOGGLE_MENU"			bind="OnMaybeExit"/>
+		<!-- Reward Listener -->
+		<Event name="ON_ENCOUNTER_REWARD"		bind="TDDB_Reward_Listener"/>
+		<Event name="ON_REWARD_INFO"			bind="TDDB_Reward_Listener"/>
+		<Event name="ON_ENCOUNTER_UI_UPDATED"	bind="TDDB_Reward_Listener"/>
+		<!-- Combat PvE Stats Listener -->
+		<Event name="ON_COMBAT_EVENT"			bind="TDDB_PVE_Listener"/>
+		<Event name="ON_HIT_TARGET_CONFIRM"		bind="TDDB_PVE_Listener"/>
+		<Event name="ON_TOOK_HIT"				bind="TDDB_PVE_Listener"/>
+		<Event name="ON_WEAPON_RELOAD"			bind="TDDB_PVE_Listener"/>
+		<Event name="ON_WEAPON_CHANGED"			bind="TDDB_PVE_Listener"/>
+		<Event name="ON_WEAPON_BURST"			bind="TDDB_PVE_Listener"/>
+		<Event name="ON_INCAPACITATE"			bind="TDDB_PVE_Listener"/>
+		<Event name="ON_SPAWN"					bind="TDDB_PVE_Listener"/>
+		<Event name="ON_REVIVE_END"				bind="TDDB_PVE_Listener"/>
+		<Event name="ON_INTERACT_END"			bind="TDDB_PVE_Listener"/>
+		<Event name="ON_INTERACT_ATTEMPT"		bind="TDDB_PVE_Listener"/>
+		<Event name="ON_INTERACT_AVAILABLE"		bind="TDDB_PVE_Listener"/>
+		<!-- Printer Linking -->
+		<!-- PC Load Letter? What the **** does that mean!? -->
+		<Event name="ON_TERMINAL_AUTHORIZED"	bind="TDDB_Printer_Listner"/>
+	</Events>
+
+	<Frames>
+		<HUDFrame name="Main" dimensions="right:99.5%; top:30; width:220; height:22" style="alpha:0;">
+			<Children>
+				<Text id="NAME" dimensions="dock:fill" style="font:UbuntuBold_10; halign:left; valign:center; alpha:1.0" key="ThumpDumpDB"/>
+			</Children>
+		</HUDFrame>
+	</Frames>
+</Component>

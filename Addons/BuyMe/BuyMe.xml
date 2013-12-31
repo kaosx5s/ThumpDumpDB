@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Component xmlns="http://www.red5studios.com/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.red5studios.com/ ../../../../schemas/component.xsd">
+	<Info 
+		title="ThumpDumpDB.com"
+		author="Xtops"
+		description="Doin thangs"
+		url="xtopolis.com"
+		uiVersion="1000"
+	/>
+
+	<Events>
+		<Event name="ON_COMPONENT_LOAD"			bind="OnComponentLoad"/>
+		<Event name="ON_PLAYER_READY"			bind="OnPlayerReady"/>
+	</Events>
+	
+	<Frames>
+		<HUDFrame name="Main" dimensions="right:99.5%; top:30; width:220; height:22" style="alpha:0">
+			<Children>
+				<Text id="NAME" dimensions="dock:fill" style="font:UbuntuBold_10; halign:left; valign:center; alpha:1.0" key=""/>
+			</Children>
+		</HUDFrame>
+	</Frames>
+</Component>

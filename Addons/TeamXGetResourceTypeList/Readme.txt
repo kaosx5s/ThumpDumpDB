@@ -1,0 +1,1 @@
+Addon used to dump resource types, this was necessary to link market data; check our MySQL tables to find out more.

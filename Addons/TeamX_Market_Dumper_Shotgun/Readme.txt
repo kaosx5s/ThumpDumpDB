@@ -1,0 +1,2 @@
+This was the addon we used via Firefall Mini in order to dump market data every 30min. It would do so many HTTP requests a second that we would hit 
+a spam limit which was placed by Red5. No idea if it still works but I take pride in it.

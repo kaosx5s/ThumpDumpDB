@@ -1,0 +1,1 @@
+This was the original Market Dumper, it worked well until there were 500+ pages per X category.
